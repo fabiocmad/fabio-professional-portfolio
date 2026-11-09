@@ -7,11 +7,27 @@ const Hero = () => {
   return (
     <section className="relative isolate overflow-hidden">
       
-      {/* Ambient background glow */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute w-[500px] h-[500px] bg-lime-400/10 rounded-full blur-[140px] -top-40 -right-40 animate-pulse" />
-        <div className="absolute w-[350px] h-[350px] bg-emerald-500/5 rounded-full blur-[120px] bottom-0 left-0" />
-      </div>
+    {/* Ambient background glow */}
+<div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+
+  <div className="hero-glow absolute w-[600px] h-[600px] rounded-full -top-40 right-0" />
+
+  <div className="absolute w-[400px] h-[400px] bg-emerald-400/10 rounded-full blur-[120px] bottom-0 left-0" />
+
+</div>
+
+{/* Technical grid */}
+<div
+  className="absolute inset-0 z-0 pointer-events-none opacity-[0.07]"
+  style={{
+    backgroundImage: `
+      linear-gradient(#a3e635 1px, transparent 1px),
+      linear-gradient(90deg, #a3e635 1px, transparent 1px)
+    `,
+    backgroundSize: '60px 60px',
+    maskImage: 'linear-gradient(to bottom, black, transparent 85%)',
+  }}
+/>
 
       {/* Subtle technical grid */}
       <div
@@ -26,7 +42,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 py-28 md:py-40">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-28 md:py-40">
 
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}

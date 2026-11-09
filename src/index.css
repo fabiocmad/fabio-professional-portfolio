@@ -34,3 +34,39 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+.hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(163, 230, 53, 0.45) 0%,
+    rgba(163, 230, 53, 0.22) 35%,
+    transparent 70%
+  );
+
+  filter: blur(65px);
+  animation: glow-pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  from {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes glow-pulse {
+  from {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
